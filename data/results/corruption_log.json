@@ -1,0 +1,69 @@
+{
+  "total_corruptions": 6,
+  "original_rows": 24,
+  "corrupted_rows": 22,
+  "corruptions": [
+    {
+      "corruption_type": "drop_latest_records",
+      "count": 4,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671812",
+        "10.1145/3637528.3671808",
+        "10.1145/3637528.3671804",
+        "10.1145/3637528.3671807"
+      ],
+      "description": "Dropped 4 latest papers (20%) to simulate ingestion data loss"
+    },
+    {
+      "corruption_type": "blank_summary",
+      "count": 2,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671802",
+        "10.1145/3637528.3671824"
+      ],
+      "description": "Emptied summary text to simulate failed scraping/extraction"
+    },
+    {
+      "corruption_type": "inject_noise",
+      "count": 2,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671823",
+        "10.1145/3637528.3671822"
+      ],
+      "description": "Injected random garbage noise tokens into summary"
+    },
+    {
+      "corruption_type": "truncate_title",
+      "count": 2,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671821",
+        "10.1145/3637528.3671810"
+      ],
+      "description": "Truncated paper title to '< 8 chars' (Paper)"
+    },
+    {
+      "corruption_type": "stale_date",
+      "count": 8,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671814",
+        "10.1145/3637528.3671813",
+        "10.1145/3637528.3671801",
+        "10.1145/3637528.3671811",
+        "10.1145/3637528.3671806",
+        "10.1145/3637528.3671809",
+        "10.1145/3637528.3671803",
+        "10.1145/3637528.3671805"
+      ],
+      "description": "Pushed published date back by 365 days to simulate stale data SLA breach"
+    },
+    {
+      "corruption_type": "duplicate_rows",
+      "count": 2,
+      "affected_paper_ids": [
+        "10.1145/3637528.3671802",
+        "10.1145/3637528.3671824"
+      ],
+      "description": "Duplicated existing rows to violate uniqueness constraints in Vector Store"
+    }
+  ]
+}
